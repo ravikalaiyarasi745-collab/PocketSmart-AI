@@ -15,6 +15,9 @@ from .routes.expenses import router as expenses_router
 from .routes.income import router as income_router
 from .routes.budget import router as budget_router
 from .routes.assistant import router as assistant_router
+from .routes.interior import router as interior_router
+from .routes.party import router as party_router
+from .routes.jewelry import router as jewelry_router
 
 settings = get_settings()
 
@@ -49,8 +52,14 @@ app.include_router(expenses_router)
 app.include_router(income_router)
 app.include_router(budget_router)
 app.include_router(assistant_router)
+app.include_router(interior_router)
+app.include_router(party_router)
+app.include_router(jewelry_router)
 
 
 @app.get("/health")
 def health():
     return {"status": "ok", "service": settings.app_name}
+
+
+
